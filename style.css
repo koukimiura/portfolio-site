@@ -163,11 +163,11 @@ h3 {
 Works
 
 -----------*/
-@media screen and (min-width: 576px) {
+/* @media screen and (min-width: 576px) {
   .works-wrap-wide {
     max-width: 1440px;
   }
-}
+} */
 
 .works-wrap-wide {
   margin: 0 auto;
@@ -188,7 +188,7 @@ Works
 @media screen and (min-width: 1024px) {
   .list-works li {
     margin-bottom: 5rem; /* 80px */
-    width: calc(50% - 2rem);
+    width: calc(50% - 2rem); /* li要素を常に50%にして32px分ひく */
   }
 
   .list-works li:nth-child(even) {
@@ -205,8 +205,7 @@ Works
   height: fit-content;
 }
 
-.list-works li::before {
-  background: #ffb549;
+/* .list-works li::before {
   content: "";
   position: absolute;
   top: 0;
@@ -218,17 +217,19 @@ Works
   transform: scale(0, 1);
   transition: transform 0.35s;
 }
+ */
+.media_thumb {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /*   height: 100px;
+ */
+}
 
 .media_thumb::before {
   content: "";
   display: block;
   padding-top: 56.25%;
-}
-
-.media_thumb {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
 }
 
 .media_thumb img {
@@ -240,15 +241,37 @@ Works
   height: auto;
 }
 
-.work-detail {
-  text-align: left;
-}
-
-.work-detail h3 p {
+.work-title {
   text-align: left;
   font-size: 1.25rem;
-  font-weight: 600;
+
   margin-bottom: 0.5rem;
+}
+.work-detail p {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+/* ----------------
+
+スマホ
+
+----------------*/
+@media screen and (max-width: 768px) {
+  .works-wrap-wide {
+    padding: 0;
+  }
+
+  .list-works {
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+
+  .list-works li {
+    width: 100%;
+    margin-bottom: 16px;
+  }
 }
 
 /*----------
