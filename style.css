@@ -185,24 +185,49 @@ Works
   flex-wrap: wrap;
 }
 
-@media screen and (min-width: 1024px) {
-  .list-works li {
-    margin-bottom: 5rem; /* 80px */
-    width: calc(50% - 2rem); /* li要素を常に50%にして32px分ひく */
-  }
-
-  .list-works li:nth-child(even) {
-    margin-top: 5rem;
-    margin-left: 4rem;
-  }
-}
-
-.list-works li {
+.work {
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 4px 6px 6px rgba(0, 0, 0, 0.2);
   position: relative;
   height: fit-content;
+
+  /* スライドの設定 */
+  transition: all 1.5s; /* 変化時間を指定する */
+  -webkit-transition: 1.5s;
+  -o-transition: 1.5s;
+}
+
+@media screen and (min-width: 1024px) {
+  .work {
+    margin-bottom: 5rem; /* 80px */
+    width: calc(50% - 2rem); /* li要素を常に50%にして32px分ひく */
+  }
+  .right:nth-child(even) {
+    margin-top: 5rem;
+    margin-left: 4rem;
+  }
+}
+
+/* スライド初期位置 */
+.left {
+  opacity: 0;
+  transform: translate(-800px, 0); /* x軸上、左へ */
+}
+
+.right {
+  opacity: 0;
+  transform: translate(800px, 0); /* x軸上、左へ */
+}
+
+.left.show {
+  opacity: 1;
+  transform: translate(0px, 0) !important; /* x軸上、左へ */
+}
+
+.right.show {
+  opacity: 1;
+  transform: translate(0px, 0) !important; /* x軸上、左へ */
 }
 
 /* .list-works li::before {
