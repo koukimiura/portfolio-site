@@ -21,4 +21,4 @@
 
 # 技術
 
-- githubpage
+- githubpage, Html, Css, Bootstrap, Google Fonts, Form run, ferret, Font Awesome, Adobe XD

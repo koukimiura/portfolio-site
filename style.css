@@ -193,9 +193,9 @@ Works
   height: fit-content;
 
   /* スライドの設定 */
-  transition: all 1.5s; /* 変化時間を指定する */
-  -webkit-transition: 1.5s;
-  -o-transition: 1.5s;
+  transition: all 0.5s; /* 変化時間を指定する */
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
 }
 
 @media screen and (min-width: 1024px) {
@@ -279,10 +279,11 @@ Works
 
 /* ----------------
 
-スマホ
+スマホ、タブレット
 
 ----------------*/
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 1023px) {
   .works-wrap-wide {
     padding: 0;
   }
@@ -293,9 +294,27 @@ Works
     padding: 0;
   }
 
-  .list-works li {
+  .work {
     width: 100%;
     margin-bottom: 16px;
+  }
+
+  .left {
+    opacity: 1;
+    transform: none; /* x軸上、左へ */
+  }
+
+  .right {
+    opacity: 1;
+    transform: none; /* x軸上、左へ */
+  }
+
+  .left.show {
+    transform: none !important; /* x軸上、左へ */
+  }
+
+  .right.show {
+    transform: none !important; /* x軸上、左へ */
   }
 }
 
